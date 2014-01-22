@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$url = "http://". $_SERVER['SERVER_NAME']."/couponlist/" ; 
+$url = "http://". $_SERVER['SERVER_NAME']."/R2W4UoHY2dNvj886W96cP018x6XTfG55/" ; 
 $config['base_url']	=  $url;
 
   

@@ -1,7 +1,7 @@
 DirectoryIndex index.php
 
 RewriteEngine on
-RewriteBase /couponlist/
+RewriteBase /R2W4UoHY2dNvj886W96cP018x6XTfG55/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|robots\.txt)
