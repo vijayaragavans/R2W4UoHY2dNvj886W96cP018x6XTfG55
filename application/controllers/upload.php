@@ -40,10 +40,14 @@ class Upload extends CI_Controller {
         {
 		    redirect(SITE_URL."home/index/");      
         }
-	
+        
+        $categories = $this->sh_users->Get_All_Categories( );
+        
 	    $filename = 'site/'.SITE_LANG.'/upload.html' ;
+	    
 
-	    $this->mysmarty->assign('filename', $filename);
+	    $this->mysmarty->assign('categories', $categories);
+		$this->mysmarty->assign('filename', $filename);
 	    $this->mysmarty->display('site/home.html'); 
 		
 	}
@@ -93,7 +97,7 @@ class Upload extends CI_Controller {
 	}
 	
 	
-	public function welcome()
+	public function upload_data()
 	{
 	
         $userdata = $this->session->userdata('user');
@@ -103,11 +107,37 @@ class Upload extends CI_Controller {
 		    redirect(SITE_URL."home/index/");      
         }
 	
-	    $filename = 'site/'.SITE_LANG.'/dashboard.html' ;
-
-	    $this->mysmarty->assign('user', $userdata);
-	    $this->mysmarty->assign('filename', $filename);
-	    $this->mysmarty->display('site/home.html'); 
+        $provider = $this->security->xss_clean( $this->input->post("provider"));
+        
+        $category = $this->security->xss_clean( $this->input->post("categories"));
+        
+        $csv_file = $_FILES[upfile][tmp_name];; // Name of your CSV file
+	    
+	    $handle = fopen($csv_file, 'r');
+        
+     do {
+	        
+	        	switch ( $category )
+	        	{
+	        		case 1:
+	        			$rt = $this->Baby_Data( $data );
+	        			print_r($rt);
+	        			break;
+	        	}
+	        
+    	}while ($data = fgetcsv($handle, 1000, ",", "'"));
+	                
+	}
+	
+	
+	
+	public function Baby_Data( $data )
+	{
+		
+		$e = $this->sh_users->Insert_Baby( $data[1] );
+		
+		return $e;
+	
 	}
 
 }

@@ -63,4 +63,23 @@ class Sh_Users
     }
     
     
+    public function Get_All_Categories( )
+    {
+    
+    	return $this->_CI->users_model->Get_All_Categories( ); 
+    }
+    
+    
+    public function Insert_Baby( $data )
+    {
+    
+    	$response = array(
+    				'product_name' => $data
+    				);
+
+    	return $this->_CI->users_model->Insert_Baby( $response ); 
+    
+    }
+    
+    
 }

@@ -22,15 +22,25 @@
                             		Upload Data
                             	</div>
                             	
-                            	<form name='uploaddata_form' id='uploaddata_form' method='POST' action='{$base_url}upload/upload_data/'>
+                            	<form name='uploaddata_form' id='uploaddata_form' method='POST' action='{$base_url}upload/upload_data/' enctype="multipart/form-data" >
                             	<div class='box_a_content'>
                             		
                             		<div class='formSep'>
                             			<label>Third Party:</label>
-                            			<select name='thirdparty' id='thirdparty'>
+                            			<select name='provider' id='provider'>
                             				<option>Flipkart</option>
                             				<option>Snapdeal</option>
                             			</select>
+                            		</div>
+                            		<div class='formSep'>
+                            			<label>Categories:</label>
+										<select name='categories' id='categories'>
+												<option value='' disabled selected >Select</option>
+										    {foreach from=$categories item=category key=i}
+												<option value='{$category.main_category_id}'>{$category.category_name}</option>
+								            {/foreach}
+										</select>
+                            			
                             		</div>
                             		
                             		<div class='formSep'>
@@ -39,7 +49,7 @@
                             		</div>
                             		
                             		<div class='formSep'>
-                            			<input type='submit' name='sub_btn' id='sub_btn' value='Upload' />
+                            			<input type='submit' name='sub_btn' id='sub_btn' class='btn btn-primary' value='Upload' />
                             		</div>
                             	</div>
                             	</form>
