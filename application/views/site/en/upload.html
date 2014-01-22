@@ -1,0 +1,62 @@
+    <body>
+        <!-- main wrapper (without footer) -->
+        <div id="main-wrapper">
+            {include file='site/en/top_menu.html'}
+
+            <section id="main_section">
+                <div class="container-fluid">
+                    <div id="contentwrapper">
+                        <div id="content">
+
+                            <!-- breadcrumbs -->
+                            <section id="breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                                                        
+                                </ul>
+                            </section>
+
+                            <!-- main content -->
+                            <div class='box_a'>
+                            	<div class='box_a_heading'>
+                            		Upload Data
+                            	</div>
+                            	
+                            	<form name='uploaddata_form' id='uploaddata_form' method='POST' action='{$base_url}upload/upload_data/'>
+                            	<div class='box_a_content'>
+                            		
+                            		<div class='formSep'>
+                            			<label>Third Party:</label>
+                            			<select name='thirdparty' id='thirdparty'>
+                            				<option>Flipkart</option>
+                            				<option>Snapdeal</option>
+                            			</select>
+                            		</div>
+                            		
+                            		<div class='formSep'>
+                            			<label>File:</label>
+                            			<input type='file' name='upfile' id='upfile' />
+                            		</div>
+                            		
+                            		<div class='formSep'>
+                            			<input type='submit' name='sub_btn' id='sub_btn' value='Upload' />
+                            		</div>
+                            	</div>
+                            	</form>
+                            </div>
+                        </div>
+                        <!-- #content end -->
+                    </div>
+                    <!-- #contentwrapper end -->
+                    <!-- side menu -->
+                    <aside id="menu">
+                    	{include file='site/en/left_menu.html'}
+                    </aside>
+                    
+                    <!-- sticky footer space -->
+                    <div id="footer_space"></div>
+                </div>
+            </section>
+        </div>
+        <!-- #main-wrapper end -->
+
