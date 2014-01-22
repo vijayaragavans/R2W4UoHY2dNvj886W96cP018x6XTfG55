@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$url = "http://". $_SERVER['SERVER_NAME']."/R2W4UoHY2dNvj886W96cP018x6XTfG55/" ; 
+$url = "http://". $_SERVER['SERVER_NAME'].":8080/R2W4UoHY2dNvj886W96cP018x6XTfG55/" ; 
 $config['base_url']	=  $url;
 
   
